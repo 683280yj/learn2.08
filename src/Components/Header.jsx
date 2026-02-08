@@ -8,24 +8,16 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div
-      style={{
-        position: "fixed",
-        display: "flex",
-        justifyContent: "center",
-        gap: "2rem",
-        background: "rgba(255,255,255,0.75)",
-        padding: "1rem",
-        top: 0,
-        width: "100%",
-        zIndex: 10,
-      }}
-    >
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#footer">Contact</a>
-    </div>
+    <header className="site-header">
+      <nav className="nav-links">
+        <a href="#home">首页</a>
+        <a href="#about">关于我</a>
+        <a href="#skills">核心能力</a>
+        <a href="#teammates">寻找队友</a>
+        <a href="#goals">比赛目标</a>
+        <a href="#contact">联系方式</a>
+      </nav>
+    </header>
   );
 };
 

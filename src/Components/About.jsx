@@ -6,78 +6,51 @@
 
 import React from "react";
 
-/**
- * About background image
- *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
- * represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a image you
- * freely use on your site.
- */
-import image from "../images/motion-background.jpg";
-
-const imageAltText = "purple and blue abstract background";
-
-/**
- * Sort description that expands on your title on the Home component.
- */
-const description =
-  "I'm a UI/UX student studying at Barnett Technical University. I enjoy creating unique and simplistic user interfaces in creative ways.";
-
-/**
- * List of some of skills or technologies you work on, are learning,
- * passionate about, or enjoy,
- */
-const skillsList = [
-  "Web design",
-  "User experience",
-  "Inclusive design",
-  "Focus group testing",
-  "Mobile user interfaces",
-  "Graphic design",
+const infoCards = [
+  {
+    title: "🎓 教育背景",
+    items: ["安徽财经大学 数字经济专业 研究生在读", "本科：电子商务"],
+  },
+  {
+    title: "💼 实习经历",
+    items: ["奇瑞品牌事业部 | 品牌策划实习生"],
+  },
+  {
+    title: "🏆 项目经验",
+    items: ["多个省级获奖项目（乡村IP运营、非遗校园孵化）", "研究生班级班长"],
+  },
 ];
 
-/**
- * Use this to give more information about what you are passionate about,
- * how you best work, or even a quote. This will help someone learn more
- * about you on a professional level.
- */
-const detailOrQuote =
-  "I am passionate about solving problems in new creative ways to drive innovation. By leveraging my UI/UX experience I continually look for new and better ways to make tech accessible by all.";
+const positioning =
+  "我不是纯技术出身，但我有数据分析能力、项目管理经验和AI工具应用实战。\n在AI比赛/项目中，我可以承担产品设计、数据分析、项目协调等角色，帮助团队把技术方案落地成可用产品。";
 
 const About = () => {
   return (
-    <section className="padding" id="about">
-      <img className="background" src={image} alt={imageAltText} />
-      <div
-        style={{
-          backgroundColor: "white",
-          width: "50%",
-          padding: "4rem",
-          margin: "3rem auto",
-          textAlign: "center",
-        }}
-      >
-        <h2>About Myself</h2>
-        <p className="large">{description}</p>
-        <hr />
-        <ul
-          style={{
-            textAlign: "left",
-            columns: 2,
-            fontSize: "1.25rem",
-            margin: "2rem 3rem",
-            gap: "3rem",
-          }}
-        >
-          {skillsList.map((skill) => (
-            <li key={skill}>{skill}</li>
+    <section className="section" id="about">
+      <div className="section-inner">
+        <div className="section-header">
+          <p className="eyebrow">About Me</p>
+          <h2>关于我</h2>
+          <p className="section-subtitle">
+            以产品视角串联需求、数据与技术，让想法从概念走向可用方案。
+          </p>
+        </div>
+        <div className="card-grid">
+          {infoCards.map((card) => (
+            <div className="card" key={card.title}>
+              <h3>{card.title}</h3>
+              <ul>
+                {card.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
-        <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
+        </div>
+        <div className="quote-card">
+          <h3>个人定位</h3>
+          <p>{positioning}</p>
+        </div>
       </div>
     </section>
   );

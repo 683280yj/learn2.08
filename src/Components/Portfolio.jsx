@@ -10,76 +10,139 @@
 
 import React from "react";
 
-/**
- * Desk image
- *
- * Below is a sample desk image. Feel free to update this to an image of your choice,
- * updating below imageAltText to string that represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
- */
-import image from "../images/design-desk.jpeg";
+const skills = [
+  {
+    title: "🎨 产品思维 + 用户洞察",
+    items: [
+      "做过多个省级获奖项目（乡村IP运营、非遗校园孵化）",
+      "擅长从用户需求出发设计解决方案",
+      "能把技术方案转化为用户友好的产品",
+    ],
+  },
+  {
+    title: "📊 项目管理 + 团队协调",
+    items: [
+      "研究生班级班长，有团队管理经验",
+      "奇瑞品牌事业部实习，跨部门协调、进度把控",
+      "能确保项目按时交付，不掉链子",
+    ],
+  },
+  {
+    title: "🤖 数据分析 + AI工具应用",
+    items: [
+      "熟悉数据分析工具和方法",
+      "实际使用过ChatGPT、Midjourney等AI工具",
+      "对AI+游戏、AI+营销等应用场景有深入思考",
+    ],
+  },
+  {
+    title: "🎤 内容策划 + 展示能力",
+    items: [
+      "做过品牌营销和内容策划",
+      "英语良好，能做商务沟通和讲解",
+      "能把技术方案包装成打动评委的展示内容",
+    ],
+  },
+];
 
-const imageAltText = "desktop with books and laptop";
+const teammateNeeds = [
+  "✅ 算法/工程大神：能搞定模型训练、系统开发的技术担当",
+  "✅ 靠谱的伙伴：说到做到，deadline前不消失",
+  "✅ 互补的团队：我负责产品、数据、协调，你负责技术实现",
+  "✅ 有想法的人：一起头脑风暴，碰撞出好点子",
+];
 
-/**
- * Project list
- *
- * An array of objects that will be used to display for your project
- * links section. Below is a sample, update to reflect links you'd like to highlight.
- */
-const projectList = [
+const myAdvantages = [
+  "✓ 不会拖后腿，执行力强",
+  "✓ 能补齐非技术环节（产品设计、数据分析、展示汇报）",
+  "✓ 有项目管理经验，能协调团队进度",
+  "✓ 对AI应用场景有敏感度，能找到好的切入点",
+];
+
+const goals = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
-    description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+    title: "🏆 冲奖",
+    description: "既然参加就要全力以赴，至少进决赛",
   },
   {
-    title: "Web Development for Beginners",
-    description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+    title: "📚 学习",
+    description: "和技术大神合作，提升AI实战能力",
   },
   {
-    title: "My Resume Site",
-    description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
-  },
-  {
-    title: "GitHub Codespaces and github.dev",
-    description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+    title: "🤝 交友",
+    description: "认识志同道合的伙伴，积累人脉",
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
-            alt={imageAltText}
-          />
+    <>
+      <section className="section" id="skills">
+        <div className="section-inner">
+          <div className="section-header">
+            <p className="eyebrow">Skills & Strengths</p>
+            <h2>核心能力</h2>
+            <p className="section-subtitle">产品 + 协调 + AI应用，用可执行的方案推动团队向前。</p>
+          </div>
+          <div className="card-grid">
+            {skills.map((skill) => (
+              <div className="card" key={skill.title}>
+                <h3>{skill.title}</h3>
+                <ul>
+                  {skill.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="container">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
-              </a>
-              <p className="small">{project.description}</p>
+      </section>
+
+      <section className="section alt" id="teammates">
+        <div className="section-inner">
+          <div className="section-header">
+            <p className="eyebrow">Looking for Teammates</p>
+            <h2>🎯 我在寻找什么样的队友</h2>
+          </div>
+          <div className="split">
+            <div className="card">
+              <h3>期待的你</h3>
+              <ul>
+                {teammateNeeds.map((need) => (
+                  <li key={need}>{need}</li>
+                ))}
+              </ul>
             </div>
-          ))}
+            <div className="card">
+              <h3>我的优势</h3>
+              <ul>
+                {myAdvantages.map((advantage) => (
+                  <li key={advantage}>{advantage}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="section" id="goals">
+        <div className="section-inner">
+          <div className="section-header">
+            <p className="eyebrow">Competition Goals</p>
+            <h2>比赛目标</h2>
+          </div>
+          <div className="card-grid">
+            {goals.map((goal) => (
+              <div className="card center" key={goal.title}>
+                <h3>{goal.title}</h3>
+                <p>{goal.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
